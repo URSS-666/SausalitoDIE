@@ -4,6 +4,9 @@
  */
 package Pedido.Factura;
 
+import javax.swing.table.DefaultTableModel;
+import com.Vista.secciones.Pedido;
+
 /**
  *
  * @author DAZX
@@ -15,6 +18,11 @@ public class tap1 extends javax.swing.JFrame {
      */
     public tap1() {
         initComponents();
+        setFormVisibility(false);
+    }
+
+    private void setFormVisibility(boolean isVisible) {
+        Cubierta1.setVisible(isVisible);
     }
 
     /**
@@ -171,7 +179,10 @@ public class tap1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        // Add a new row to the Orden_Detalle table with the values entered
+        Pedido pedido = new Pedido();
+        DefaultTableModel model = (DefaultTableModel) pedido.jTable3.getModel();
+        model.addRow(new Object[]{jLabel4.getText(), jSpinner1.getValue(), jComboBox1.getSelectedItem(), "Total"});
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed

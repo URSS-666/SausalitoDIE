@@ -7,12 +7,19 @@ package Secciones.Menu;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.Vista.secciones.facturaPanel;
 
 /**
  *
  * @author Sofia Useche
  */
 public class Bebidas extends javax.swing.JPanel {
+
+    private facturaPanel facturaPanel;
 
     /**
      * Creates new form Bebidas
@@ -36,6 +43,31 @@ public class Bebidas extends javax.swing.JPanel {
         configurarBoton(BotonGaseosa1_2, "Gaseosa 1.5 litros", "/gaseosa-1.5litros-.jpg","", "$7000");
         configurarBoton(BotonGaseosa3, "Gaseosa 3 litros", "/gaseosa-3litros-.jpg","", "$10000");
         configurarBoton(BotonColaPola, "Cola y pola 1.5 litros", "/cola-y-pola-1.5litros-.jpg","", "$7000");
+
+        facturaPanel = new facturaPanel();
+        facturaPanel.setVisible(false);
+
+        addActionListenerToButton(BotonJugos);
+        addActionListenerToButton(BotonLimonada);
+        addActionListenerToButton(BotonCerezada);
+    }
+
+    private void addActionListenerToButton(JButton button) {
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toggleFacturaPanelVisibility();
+                registerPurchase();
+            }
+        });
+    }
+
+    private void toggleFacturaPanelVisibility() {
+        facturaPanel.setVisible(!facturaPanel.isVisible());
+    }
+
+    private void registerPurchase() {
+        // Add code to register the purchase in the Orden_Detalle table
     }
 
     /**
