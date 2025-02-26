@@ -57,12 +57,17 @@ public class Bebidas extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 toggleFacturaPanelVisibility();
+                registerPurchase();
             }
         });
     }
 
     private void toggleFacturaPanelVisibility() {
         facturaPanel.setVisible(!facturaPanel.isVisible());
+    }
+
+    private void registerPurchase() {
+        // Add code to register the purchase in the Orden_Detalle table
     }
 
     /**
