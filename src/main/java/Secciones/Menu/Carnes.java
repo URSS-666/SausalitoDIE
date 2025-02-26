@@ -57,6 +57,37 @@ public class Carnes extends javax.swing.JPanel {
         // Add code to register the purchase in the Orden_Detalle table
     }
 
+    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {
+        Cubierta1.setBackground(new Color(230, 230, 230, 240));
+        PanelCubierta.setVisible(true);
+        PanelCubierta.removeAll();
+        PanelCubierta.repaint();
+        PanelCubierta.revalidate();
+        PanelCubierta.add(Cubierta1);
+        PanelCubierta.repaint();
+        PanelCubierta.revalidate();
+    }
+
+    private void BotonTerneraActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCerdoActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCorderoActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCarnesMixtasActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonTricarneActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -201,23 +232,23 @@ public class Carnes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonTerneraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTerneraActionPerformed
-        // TODO add your handling code here:
+        btnPedidoActionPerformed(evt);
     }//GEN-LAST:event_BotonTerneraActionPerformed
 
     private void BotonCerdoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerdoActionPerformed
-        // TODO add your handling code here:
+        btnPedidoActionPerformed(evt);
     }//GEN-LAST:event_BotonCerdoActionPerformed
 
     private void BotonCorderoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCorderoActionPerformed
-        // TODO add your handling code here:
+        btnPedidoActionPerformed(evt);
     }//GEN-LAST:event_BotonCorderoActionPerformed
 
     private void BotonCarnesMixtasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCarnesMixtasActionPerformed
-        // TODO add your handling code here:
+        btnPedidoActionPerformed(evt);
     }//GEN-LAST:event_BotonCarnesMixtasActionPerformed
 
     private void BotonTricarneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTricarneActionPerformed
-        // TODO add your handling code here:
+        btnPedidoActionPerformed(evt);
     }//GEN-LAST:event_BotonTricarneActionPerformed
 
 
