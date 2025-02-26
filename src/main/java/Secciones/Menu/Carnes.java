@@ -7,12 +7,18 @@ package Secciones.Menu;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.Vista.secciones.facturaPanel;
 
 /**
  *
  * @author Sofia Useche
  */
 public class Carnes extends javax.swing.JPanel {
+
+    private facturaPanel facturaPanel;
 
     /**
      * Creates new form Carnes
@@ -24,6 +30,26 @@ public class Carnes extends javax.swing.JPanel {
         configurarBoton(BotonCordero, "Cordero al horno", "/cordero-al-horno-.jpeg", "$30000","Solo domingos","$40000");
         configurarBoton(BotonCarnesMixtas, "Carnes mixtas", "/carnes-mistas.jpeg", "$30000","Res/cerdo, res/cordero, cerdo/cordero","$40000");
         configurarBoton(BotonTricarne, "Tricarne", "/tricarne.jpeg", "$70000","Res, cerdo, cordero", null);
+
+        facturaPanel = new facturaPanel();
+        facturaPanel.setVisible(false);
+
+        addActionListenerToButton(BotonTernera);
+        addActionListenerToButton(BotonCerdo);
+        addActionListenerToButton(BotonCordero);
+    }
+
+    private void addActionListenerToButton(JButton button) {
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toggleFacturaPanelVisibility();
+            }
+        });
+    }
+
+    private void toggleFacturaPanelVisibility() {
+        facturaPanel.setVisible(!facturaPanel.isVisible());
     }
 
     /**

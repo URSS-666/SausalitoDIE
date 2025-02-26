@@ -7,12 +7,18 @@ package Secciones.Menu;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.Vista.secciones.facturaPanel;
 
 /**
  *
  * @author Sofia Useche
  */
 public class Adicionales extends javax.swing.JPanel {
+
+    private facturaPanel facturaPanel;
 
     /**
      * Creates new form Adicionales
@@ -27,6 +33,26 @@ public class Adicionales extends javax.swing.JPanel {
         configurarBoton(BotonPlatano, "Platano relleno", "/platano-relleno-.jpg","", "$4500");
         configurarBoton(BotonPatacon, "Porcion de patacon", "/patacones-.jpg","", "$4500");
         configurarBoton(BotonMazorca, "Mazorca chorriada", "/mazorca-chorreada-.jpeg","", "$2500");
+
+        facturaPanel = new facturaPanel();
+        facturaPanel.setVisible(false);
+
+        addActionListenerToButton(BotonRellena);
+        addActionListenerToButton(BotonPapaFrancesa);
+        addActionListenerToButton(BotonEnvuelto);
+    }
+
+    private void addActionListenerToButton(JButton button) {
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toggleFacturaPanelVisibility();
+            }
+        });
+    }
+
+    private void toggleFacturaPanelVisibility() {
+        facturaPanel.setVisible(!facturaPanel.isVisible());
     }
 
     /**
