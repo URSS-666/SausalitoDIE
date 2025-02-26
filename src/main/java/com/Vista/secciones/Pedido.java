@@ -31,6 +31,38 @@ public class Pedido extends javax.swing.JPanel {
         Seccion.revalidate();
         Seccion.repaint();
     }
+    
+    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {
+        Cubierta1.setBackground(new Color(230, 230, 230, 240));
+        PanelCubierta.setVisible(true);
+        PanelCubierta.removeAll();
+        PanelCubierta.repaint();
+        PanelCubierta.revalidate();
+        PanelCubierta.add(Cubierta1);
+        PanelCubierta.repaint();
+        PanelCubierta.revalidate();
+    }
+
+    private void BotonTerneraActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCerdoActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCorderoActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonCarnesMixtasActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+
+    private void BotonTricarneActionPerformed(java.awt.event.ActionEvent evt) {
+        btnPedidoActionPerformed(evt);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
